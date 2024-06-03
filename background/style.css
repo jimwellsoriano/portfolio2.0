@@ -1,0 +1,992 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+body{
+    background-color: rgb(39, 39, 39);
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+header.scrolled {
+    background-color: white;
+    box-shadow: 0 0 2px white;
+}
+
+.Portfolio-logo {
+    font-size: 30px;
+    font-weight: 600;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+header.scrolled .Portfolio-logo {
+    color: rgb(39, 39, 39);
+}
+
+.header-link-container{
+    width: 450px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-link-container a {
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(243, 243, 243);
+    transition: color 0.3s ease-in-out;
+}
+
+.header-link-container a.is-toggled{
+    color:rgb(96, 175, 255);
+}
+
+header.scrolled .header-link-container a{
+    color: rgb(39, 39, 39);
+    font-weight: 600;
+}
+
+header.scrolled a.is-toggled{
+    color:rgb(96, 175, 255);
+}
+
+header.scrolled .header-link-container a:hover{
+    color:rgb(96, 175, 255);
+}
+
+.header-link-container a:hover {
+    color:rgb(96, 175, 255);
+}
+
+/*HOME SECTION*/
+.home-section{
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.parent-container{
+    color: rgb(243, 243, 243);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.parent-container h1{
+    font-size: 3em;
+}
+
+.parent-container h2{
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.parent-container span{
+    color:rgb(96, 175, 255);
+}
+
+.small-h1{
+    font-size: 1em;
+}
+
+.name-container{
+    background-color: rgb(87, 87, 87);
+    color: rgb(243, 243, 243);
+    font-size: 16px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+
+.home-child-container{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.50em;
+}
+  
+
+.home-child-container div{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    font-size: 14px;
+    padding-left: 5em;
+}
+
+.text-doubleline{
+    width: 95px;
+    line-height: 1.2;
+    margin-right: 3em;
+}
+
+.text-round{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 30px;
+    background-color: rgb(49, 53, 54);
+    border-radius: 25px;
+    margin-right: 1em;
+}
+
+.home-child-container hr {
+    width: 2px;
+    border: none;
+    background-color: white;
+    height: 35px;
+    margin-right: 50px;
+}
+
+.home-first-btn{
+    height: 40px;
+    width: 140px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
+    margin-right: 1em;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.home-first-btn:active{
+    background-color: rgb(148, 148, 148);
+}
+
+.home-first-btn:hover{
+    transform: scale(1.1);
+}
+
+.home-second-btn{
+    background-color: rgb(49, 53, 54);
+    height: 40px;
+    width: 140px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(243, 243, 243);
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.home-second-btn:active{
+    background-color: rgb(33, 36, 36);
+}
+
+.home-second-btn:hover{
+    transform: scale(1.1);
+}
+
+.home-button-container button i{
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+/* ABOUT ME SECTION*/
+
+.about-me-section{
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-me-container img{
+    height: 350px;
+    width: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 60px;
+    box-shadow: 0 0 8px rgb(243, 243, 243);
+    margin-right:80px;
+}
+
+.about-me-container h1{
+    color: rgb(243, 243, 243);
+    font-size: 1.60em;
+}
+
+.about-me-container h1 i{
+    font-size: 0.10em;
+    color: rgb(96, 175, 255);
+    margin-left: -4px;
+}
+
+.about-me-container p{
+    max-width: 700px;
+    color:rgb(243, 243, 243);
+    font-size: 15px;
+    margin-top: 1em;
+}
+
+.about-me-container article {
+    max-width: 700px;
+}
+
+/* SKILL CONTAINER */
+
+.skill-container h1{
+    color: rgb(243, 243, 243);
+    font-size: 1.60em;
+}
+
+.skill-container h1 i{
+    font-size: 0.10em;
+    color: rgb(96, 175, 255);
+    margin-left: -4px;
+}
+
+
+.skill-container article p{
+    color:rgb(243, 243, 243);
+    font-size: 15px;
+    margin-top: 1em;
+
+}
+
+.skill-logo-container{
+    display: grid;
+    grid-template-columns: repeat(8, 100px);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.skill-container article{
+    margin-bottom: 2em;
+}
+
+.logo-holder-container{
+    background-color: rgb(49, 53, 54);
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logo-holder-container:hover {
+    transform: scale(1.1);
+}
+
+.logo-holder-container img{
+    height: 40px;
+}   
+
+.logo-holder-container p {
+    color:rgb(243, 243, 243);
+    font-size: 14px;
+    text-align: center;
+    margin-top: -8px;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.skill-container{
+    display: inline-block;
+}
+
+.skills-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+
+}
+
+/* ECUDATION SECTION */
+
+.education-section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.school-education-container{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    column-gap: 20px;
+}
+
+.college-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.school-logo img{
+    height: 90px;
+
+}
+
+.school-logo{
+    height: 110px;
+    width: 110px;
+    background-color: rgb(49, 53, 54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 1.50em;
+}
+
+
+.education-container h1{
+    color: rgb(243, 243, 243);
+    font-size: 1.60em;
+    margin-bottom: 1em;
+}
+
+.education-container h1 i{
+    font-size: 0.10em;
+    color: rgb(96, 175, 255);
+    margin-left: -4px;
+}
+
+.education-degree{
+    font-size: 13px;
+    color: rgb(243, 243, 243);
+    margin-bottom: 2px;
+}
+
+.course{
+    color: rgb(243, 243, 243);
+    margin-bottom: 2px;
+    max-width: 350px;
+}
+
+.date-of-graduate{
+    font-size: 13px;
+    color: rgb(243, 243, 243);
+    margin-bottom: 2px;
+}
+
+.school-name{
+    color: rgb(243, 243, 243);
+}
+
+/* CONTACT DEATAILS */
+
+.socialmedia-contact-container img{
+    height:40px;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.contact-container-parent h1{
+    color: rgb(243, 243, 243);
+    font-size: 1.60em;
+    margin-bottom: 1em;
+}
+
+.contact-container-parent h1 i{
+    font-size: 0.10em;
+    color: rgb(96, 175, 255);
+    margin-left: -4px;
+}
+
+.contact-details p {
+    color: rgb(243, 243, 243);
+    font-size: 12px;
+}
+
+.contact-details h3{
+    color:rgb(243, 243, 243);
+    font-size: 15px;
+}
+
+.socialmedia-contact-container{
+    display: flex;
+}
+
+.contact-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 80px;
+    padding-bottom: 2em;
+
+}
+
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 0 2em 0;
+
+}
+
+/* FOOTER SECTION */
+
+.footer-section{
+    padding: 2em 0 2em 0;
+    height: 580px;
+    padding: 0 5em 0 5em;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.30);
+}
+
+.footer-description-container{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.footer-forum-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-container h1{
+    color: rgb(243, 243, 243);
+}
+
+.Please-fill-out{
+    font-size: 0.80em;
+    color: rgb(243, 243, 243);
+margin-bottom: 4em;
+}
+
+.footer-forum-container p{
+    color: rgb(243, 243, 243);
+    font-size: 0.80em;
+}
+
+.footer-forum-container img {
+    height: 30px;
+    margin-right: 0.50em;
+    cursor: pointer;
+}
+
+.footer-forum-container .input-same-size{
+    flex: 1;
+    box-sizing: border-box;
+    height: 40px;
+    width: calc(100% - 1em);
+    padding-left: 1em;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    margin-bottom: 0.80em;
+    display: block;
+
+}
+
+.footer-forum-container .input-same-size::placeholder{
+    font-size: 14px;
+
+}
+
+.input-large-size {
+    width: 600px;
+    height: 200px;
+    border-radius: 7px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-left: 1em;
+    font-size: 15px;
+    padding-top: 1em;
+    color: white;
+    margin-bottom: 1em;
+}
+
+
+.footer-forum-container button {
+    height: 40px;
+    width: 130px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color:  rgb(243, 243, 243);
+    border: none;
+    color: black;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-bottom: 0.50em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.footer-forum-container button:hover {
+    background-color:  rgb(141, 141, 141);
+}
+
+
+
+.footer-forum-container p {
+    margin-bottom: 0.50em;
+}
+
+
+
+
+
+/* MEDIA MAX WIDTH 1280 */
+
+@media (max-width: 1280px){
+    .footer-description-container{
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* MEDIA MAX WIDTH 1075*/
+
+@media (max-width: 1075px){
+    .about-me-container{
+     align-items: center;
+     justify-content: center;
+    }
+
+    .skills-section{
+       margin-top: 7em;
+    }
+    
+}
+
+
+@media (max-width: 1024px){
+    .skill-logo-container{
+        grid-template-columns: repeat(7, 100px);
+    
+    }
+}
+
+@media (max-width: 950px){
+    .skill-logo-container{
+        grid-template-columns: repeat(6, 100px);
+    }
+
+    .school-logo{
+        margin-left: 5em;
+        margin-bottom: 2em;
+    }
+
+    .education-container h1{
+    margin-left: 2em;
+    }
+
+    .bg-description{
+        margin-left: 2.50em;
+    }
+
+    .contact-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-forum-container{
+        margin-top: -2em;
+    }
+}
+
+
+/* @media (max-width: 850px){
+    .college-container{
+        flex-direction: column;
+    }
+} */
+
+
+
+/* MEDIA MAX WIDTH 767 */
+
+
+@media (max-width: 767px){
+    .parent-container h1{
+        font-size: 2.50em;
+    }
+
+    .parent-container h2{
+        font-size: 1.80em;
+
+    }
+    .name-container{
+        font-size: 14px;
+        width: 250px;
+    }
+
+    .home-child-container{
+        grid-template-columns: repeat(3, 250px);
+    }
+
+    .skill-logo-container{
+        grid-template-columns: repeat(5, 100px);
+    }
+
+    .contact-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .illustrated-peaople{
+        height: 300px;
+    }
+    
+}
+
+@media (max-width: 630px){
+    .skill-logo-container{
+        grid-template-columns: repeat(4, 100px);
+    }
+}
+
+/* MEDIA MAX WIDTH 500 */
+
+@media (max-width: 500px){
+    .parent-container h1{
+        font-size: 1.80em;
+    }
+
+    .parent-container h2{
+        font-size: 1.20em;
+    }
+    .name-container{
+        font-size: 14px;
+        width: 250px;
+    }
+
+    .home-child-container{
+        grid-template-columns: repeat(2, 200px);
+        place-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-child-container hr {
+      display: none;
+    }
+
+    .hours-of-coding-container{
+        margin-left: 13em;
+        margin-top: 2em;
+    }
+
+    .about-me-container img{
+        height: 280px;
+        width: 230px;
+        margin-top: 5em;
+    }
+
+    .about-me-container h1{
+        font-size: 1.20em;
+        margin-left: 2em;
+        margin-top: 2em;
+    }
+
+    .about-me-container p{
+        font-size: 13px;
+        margin: 2em 2em 0 2em;
+    }
+
+    .text-doubleline{
+        font-size: 0.80em;
+        width: 80px;
+    }
+
+    .hours-of-coding-container{
+        margin-left: 13em;
+        margin-top: 1em;
+    }
+
+    .skill-logo-container{
+        grid-template-columns: repeat(3, 100px);
+    }
+
+    .logo-holder-container{
+        width: 80px;
+        height: 80px;
+    }
+    
+    .logo-holder-container img{
+        height: 30px;
+    } 
+
+    .logo-holder-container p {
+        font-size: 12px;
+    }
+    
+    .school-logo{
+        margin-left: 3em;
+        margin-bottom: 2em;
+    }
+
+    .input-large-size {
+        width: 400px;
+    }
+
+    .Please-fill-out{
+        text-align: center;
+    }
+
+    .footer-container h1 {
+        margin-left: 1.50em;
+    }
+      
+}   
+
+/* MEDIA MAX WIDTH 500 */
+
+@media (max-width: 520px){
+    .parent-container h1{
+        font-size: 1.90em;
+    }
+
+    .parent-container h2{
+        font-size: 1.40em;
+    }
+    .name-container{
+        font-size: 14px;
+        width: 250px;
+    }
+
+    .home-child-container{
+        grid-template-columns: repeat(2, 250px);
+        place-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-child-container hr {
+      display: none;
+    }
+
+    .hours-of-coding-container{
+        margin-right: -5em;
+        margin-top: 2em;
+    }
+
+    .about-me-container img{
+        height: 280px;
+        width: 230px;
+        margin-top: 0.50em;
+        margin-left: 4em;
+    }
+
+    .about-me-container h1{
+        font-size: 1.20em;
+        margin-left: 2em;
+        margin-top: 2em;
+    }
+
+    .about-me-container p{
+        font-size: 13px;
+        margin: 2em 2em 0 2em;
+    }
+
+    .text-doubleline{
+        font-size: 0.80em;
+        width: 80px;
+    }
+
+    .hours-of-coding-container{
+        margin-left: 13em;
+        margin-top: 1em;
+    }
+
+    .skill-logo-container{
+        column-gap: 5px;
+        row-gap: 10px;
+    }
+    
+    .footer-section{
+        padding: 0 1em 0 1em;
+    }
+
+    .education-degree{
+        font-size: 11px;
+    }
+
+    .course{
+        font-size: 15px;
+    }
+
+    .date-of-graduate{
+        font-size: 12px;
+    }
+
+    .school-name{
+        font-size: 13px;
+    }
+
+    .footer-container h1 {
+        font-size: 25px;
+    }
+}
+
+/* MEDIA MAX WIDTH 480 */
+
+@media (max-width: 480px){
+    
+    .parent-container h1{
+        font-size: 1.70em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .parent-container h2{
+        font-size: 1.20em;
+    }
+
+    .about-me-container img{
+        margin-top: 0.70em;
+    }
+
+    .parent-container h1{
+        font-size: 1.90em;
+    }
+
+    .parent-container h2{
+        font-size: 1.40em;
+    }
+    .name-container{
+        font-size: 14px;
+        width: 250px;
+    }
+
+    .home-child-container{
+        grid-template-columns: repeat(2, 250px);
+        place-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-child-container hr {
+      display: none;
+    }
+
+    .hours-of-coding-container{
+        margin-right: -5em;
+        margin-top: 2em;
+    }
+
+    .about-me-container img{
+        height: 280px;
+        width: 230px;
+        margin-top: 0.50em;
+        margin-left: 4em;
+    }
+
+    .about-me-container h1{
+        font-size: 1.20em;
+        margin-left: 2em;
+        margin-top: 2em;
+    }
+
+    .about-me-container p{
+        font-size: 13px;
+        margin: 2em 2em 0 2em;
+    }
+
+    .text-doubleline{
+        font-size: 0.80em;
+        width: 80px;
+    }
+
+    .hours-of-coding-container{
+        margin-left: 13em;
+        margin-top: 1em;
+    }
+
+    .skill-logo-container{
+        column-gap: 5px;
+        row-gap: 10px;
+    }
+    
+    .footer-section{
+        padding: 0 1em 0 1em;
+    }
+
+    .education-degree{
+        font-size: 11px;
+    }
+
+    .course{
+        font-size: 15px;
+    }
+
+    .date-of-graduate{
+        font-size: 12px;
+    }
+
+    .school-name{
+        font-size: 13px;
+    }
+
+    .footer-container h1 {
+        font-size: 25px;
+    }
+}
